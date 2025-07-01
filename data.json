@@ -1,0 +1,39 @@
+{
+    "12": {
+        "member_id": "12",
+        "name": "kim",
+        "age": "23",
+        "gender": "M",
+        "phone": "9877655",
+        "join_date": "2025-06-29",
+        "payments": [
+            {
+                "amount": 1200.0,
+                "date": "2025-06-29"
+            }
+        ]
+    },
+    "76": {
+        "member_id": "76",
+        "name": "dfs",
+        "age": "24",
+        "gender": "Male",
+        "phone": "876433",
+        "join_date": "2025-06-29",
+        "payments": []
+    },
+    "19": {
+        "member_id": "19",
+        "name": "Shakir",
+        "age": 24,
+        "gender": "male",
+        "phone": "12345",
+        "join_date": "2025-06-30",
+        "payments": [
+            {
+                "amount": 2000.0,
+                "date": "2025-06-30"
+            }
+        ]
+    }
+}

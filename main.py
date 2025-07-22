@@ -116,15 +116,36 @@ def main_window():
 
         tk.Button(win, text="Save Payment", command=save_payment).pack()
 
+    # ----------- NEW FUNCTION TO DELETE MEMBER -----------
+    def delete_member():
+        def confirm_delete():
+            member_id = id_entry.get()
+            if gym.delete_member(member_id):
+                messagebox.showinfo("Deleted", f"Member {member_id} removed.")
+                win.destroy()
+            else:
+                messagebox.showerror("Error", "Member not found.")
+
+        win = tk.Toplevel(app)
+        win.title("Delete Member")
+
+        tk.Label(win, text="Enter Member ID to Delete").pack()
+        id_entry = tk.Entry(win)
+        id_entry.pack()
+
+        tk.Button(win, text="Delete", command=confirm_delete).pack(pady=5)
+
+    # ---------------- Main UI ----------------
     app = tk.Tk()
     app.title("Gym Management System")
-    app.geometry("400x300")
+    app.geometry("400x350")
 
     tk.Label(app, text="Welcome to Gym Manager", font=('Arial', 16)).pack(pady=10)
 
     tk.Button(app, text="Add Member", width=30, command=add_member).pack(pady=5)
     tk.Button(app, text="View Members", width=30, command=view_members).pack(pady=5)
     tk.Button(app, text="Add Payment", width=30, command=add_payment).pack(pady=5)
+    tk.Button(app, text="Delete Member", width=30, command=delete_member).pack(pady=5)  # ← NEW BUTTON
     tk.Button(app, text="Exit", width=30, command=app.quit).pack(pady=5)
 
     app.mainloop()

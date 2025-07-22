@@ -41,6 +41,14 @@ class GymSystem:
         member = self.members.get(member_id)
         if member:
             member.add_payment(amount)
+
+    def delete_member(self, member_id):
+    if member_id in self.members:
+        del self.members[member_id]
+        self.save_data()
+        return True
+    return False
+
             self.save_data()
             return True
         return False
